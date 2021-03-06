@@ -1,0 +1,219 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafc;
+}
+
+.product-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    .image-box {
+      width: 60%;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 10px 30px rgba($color: #000000, $alpha: 0.3);
+      box-shadow: 0px 50px 100px rgba($color: #304857, $alpha: 0.05),
+        0px 5px 15px rgba($color: #000000, $alpha: 0.05);
+      .image {
+        img {
+          width: 100%;
+          height: 400px;
+          cursor: grab;
+        }
+      }
+      .img-list {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        img {
+          width: 75px;
+          height: 75px;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+
+        img:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+    }
+    .content-box {
+      width: 40%;
+      padding: 2rem;
+
+      .content-in {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+
+        h1 {
+          margin-bottom: 3rem;
+        }
+
+        .tab-box {
+          width: 100%;
+          height: 100%;
+          small {
+            text-transform: uppercase;
+          }
+
+          .color-tabs {
+            margin-top: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+
+            .color-tab {
+              width: inherit;
+              height: inherit;
+              position: relative;
+
+              input {
+                display: none;
+
+                &:checked + label {
+                  border: 2px solid rgb(0, 0, 0);
+                }
+              }
+
+              label {
+                content: "";
+                width: 40px;
+                height: 40px;
+                background-color: red;
+                position: absolute;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 786px) {
+  .product-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .image-box {
+        width: 94%;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 10px 30px rgba($color: #000000, $alpha: 0.3);
+        box-shadow: 0px 50px 100px rgba($color: #304857, $alpha: 0.05),
+          0px 5px 15px rgba($color: #000000, $alpha: 0.05);
+        .image {
+          img {
+            width: 100%;
+            height: 250px;
+          }
+        }
+        .img-list {
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+
+          img {
+            width: 75px;
+            height: 75px;
+            border-radius: 3px;
+          }
+
+          img:not(:last-child) {
+            margin-right: 10px;
+          }
+        }
+      }
+      .content-box {
+        width: 100%;
+        padding: 1rem;
+
+        .content-in {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+
+          h1 {
+            margin-bottom: 1rem;
+          }
+
+          .tab-box {
+            width: 100%;
+            height: 100%;
+            small {
+              text-transform: uppercase;
+            }
+
+            .color-tabs {
+              margin-top: 0.2rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 50px;
+
+              .color-tab {
+                width: inherit;
+                height: inherit;
+                position: relative;
+
+                input {
+                  display: none;
+                }
+                label {
+                  content: "";
+                  width: 25px;
+                  height: 25px;
+                  position: absolute;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
